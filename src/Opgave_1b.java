@@ -1,13 +1,13 @@
 import java.util.Arrays;
 
-public class Opgave_1a {
+public class Opgave_1b {
     public static void main(String[] args) {
         int[] numbers = new int[10];
         int x = 5;
 
         addNumbers(numbers);
         System.out.println("The array is " + Arrays.toString(numbers));
-        System.out.println("Does the array contain " + x + "? " + find(numbers,x) );
+        System.out.println(x + " appears " + findAll(numbers,x) + " time(s) in the array");
     }
 
     public static void addNumbers(int[] numbers){
@@ -16,11 +16,12 @@ public class Opgave_1a {
         }
     }
 
-    public static boolean find(int[] numbers, int x){
+    public static int findAll(int[] numbers, int x){
+        int count = 0;
         for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] == x)
-                return true;
+                count++;
         }
-        return false;
+        return count;
     }
 }
